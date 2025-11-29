@@ -1,14 +1,18 @@
+#le Pipfile décrit tout ce qu’il faut pour que ton projet Python fonctionne, sans polluer ton Python globa
+
 [[source]]
-url = "https://pypi.org/simple"
-verify_ssl = true
-name = "pypi"
+name = "pypi"                      # Nom du repository PyPI officiel
+url = "https://pypi.org/simple"    # URL de la source des packages Python
+verify_ssl = true                  # Active la vérification SSL pour sécuriser les téléchargements
 
 [packages]
+pandas = "*"                       # Librairie pour la manipulation de données
+pyarrow = "*"                      # Nécessaire pour gérer les fichiers Parquet (Spark / Pandas)
+pyspark = "*"
 
 [dev-packages]
-pyspark = "==2.4.0"
-ipython = "*"
-"flake8" = "*"
+ipython = "*"                      # Shell interactif amélioré (utile pour tester du code)
+flake8 = "*"                       # Outil d'analyse statique pour vérifier la qualité du code
 
 [requires]
-python_version = "3.6"
+python_version = "3.12"            # Spécifie que le projet doit utiliser Python 3.12
